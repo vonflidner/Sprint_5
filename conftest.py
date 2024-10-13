@@ -25,12 +25,6 @@ def open_registration_page(driver):
     return _open
 
 @pytest.fixture
-def driver():
-    driver = webdriver.Chrome()
-    yield driver
-    driver.quit()
-
-@pytest.fixture
 def generate_unique_email():
     first_name = fake.first_name().lower()
     last_name = fake.last_name().lower()

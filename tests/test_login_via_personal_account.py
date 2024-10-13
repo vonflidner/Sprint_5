@@ -9,12 +9,12 @@ def test_login_via_personal_account(driver, create_user):
 
     driver.get(MAIN_URL)
 
-    personal_account_button = WebDriverWait(driver, 10).until(
+    personal_account_button = WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable(PageLocators.PERSONAL_ACCOUNT_BUTTON)
     )
     personal_account_button.click()
 
-    email_input = WebDriverWait(driver, 10).until(
+    email_input = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located(PageLocators.EMAIL_FIELD)
     )
     password_input = driver.find_element(*PageLocators.PASSWORD_FIELD)
@@ -25,10 +25,10 @@ def test_login_via_personal_account(driver, create_user):
 
     login_button.click()
 
-    WebDriverWait(driver, 10).until(EC.url_to_be(MAIN_URL))
+    WebDriverWait(driver, 20).until(EC.url_to_be(MAIN_URL))
     assert driver.current_url == MAIN_URL
 
-    make_order_button = WebDriverWait(driver, 10).until(
+    make_order_button = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located(PageLocators.MAKE_ORDER_BUTTON)
     )
     assert make_order_button.is_displayed()

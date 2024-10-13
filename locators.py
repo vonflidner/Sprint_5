@@ -9,8 +9,7 @@ class PageLocators:
     PASSWORD_FIELD = (By.XPATH, "//input[@name='Пароль']")  # Registration Password Field
 
     SUBMIT_BUTTON = (By.XPATH,
-                     "//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx "
-                     "button_button_size_medium__3zxIa']")  # (Registration or Entry) Submit Button
+                     "//button[contains(@class,'button_button')]")  # (Registration or Entry) Submit Button
 
     ERROR_MESSAGE = (By.XPATH, "//p[text()='Некорректный пароль']")  # Registration Error Message
 
@@ -23,20 +22,22 @@ class PageLocators:
 
     ENTER_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")  # Personal Account Button
 
-    HEADER_LOGO = (By.XPATH, "//div[@class='AppHeader_header__logo__2D0X2']//a[@href='/']")  # Header Logo WIth MAIN_URL
+    HEADER_LOGO = (By.XPATH, "//div[contains(@class, 'AppHeader_header__logo')]//a[@href='/']") # Header Logo WIth MAIN_URL
 
     ENTER_LOGIN_FORM = (By.XPATH, "//a[text()='Войти']") # Enter Login Form
 
-    CONSTRUCTOR_BUTTON = (By.XPATH, "//ul[@class='AppHeader_header__list__3oKJj']//a[@href='/']")  # Constructor
+    CONSTRUCTOR_BUTTON = (By.XPATH, "//ul[contains(@class, 'AppHeader_header')]//a[@href='/']")
+
+    #CONSTRUCTOR_BUTTON = (By.XPATH, "//ul[@class='AppHeader_header__list__3oKJj']//a[@href='/']")  # Constructor
     # Button in Personal Account
 
     EXIT_BUTTON = (By.XPATH, "//button[contains(text(),'Выход')]")  # Personal Account Exit Button
 
-    BULKI_SECTION = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and span[text()='Булки']]") # Bulki Section button
+    BULKI_SECTION = (By.XPATH, "//div[contains(@class, 'tab_tab') and span[text()='Булки']]") # Bulki Section button
 
-    SAUCE_SECTION = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and span[text()='Соусы']]") # Sauce Section Button
+    SAUCE_SECTION = (By.XPATH, "//div[contains(@class, 'tab_tab') and span[text()='Соусы']]") # Sauce Section Button
 
-    FILLINGS_SECTION = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and span[text()='Начинки']]") # Fillings Section Button
+    FILLINGS_SECTION = (By.XPATH, "//div[contains(@class, 'tab_tab') and span[text()='Начинки']]") # Fillings Section Button
 
     BULKI_TITLE = (By.XPATH, "//h2[contains(text(),'Булки')]")
 
